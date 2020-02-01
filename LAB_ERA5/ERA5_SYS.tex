@@ -1,0 +1,60 @@
+
+\section{Setting up the API}
+
+\begin{frame}
+
+In this lab we will introduce the use of ERA5 and seasonal forecasting
+data.  There are several key ways to access the datasets:
+
+\begin{itemize}
+\item Using the C3S online python-based toolbox to retrieve data and make simple
+  analysis/plots (Advantage: less download volume. Disadvantage:
+  system is slow, limited in type of analysis one can perform and can
+  only access ERA5).
+\item Use the web interface to select data, and then manually download
+  using the browser (Advantage: simple to use, Disadvantage: Very
+  cumbersome if you want to have more than a single variable)
+\item Use the python API to download data directly to your desktop
+  (Advantage, very flexible and convenient. Disadvantage, needs a
+  little time to set up and you need anyway to refer to webpage to get
+  example scripts)
+\item{itemize}
+
+Most regular users will use the API to access data, referring to the
+webpage interface to help them set up the scripts.
+\end{frame}
+
+\begin{frame}
+To set up the API, you need to 
+\begin{itemize}
+\item register with the C3S system 
+\item Install the CDS API key (just once)
+\item Install the CDS API client (just once)
+\item Log in the C3S webpage to accept the terms and conditions on the
+  dataset you wish to access (just once) and obtain an example script
+\end{itemize} 
+
+There is a very simple to follow online blog \url{available here}{
+  https://cds.climate.copernicus.eu/api-how-to}.  Please follow the
+steps carefully.
+
+NOTE: If you use pip to install the cdsapi you will run the retrieval
+script using python (python2). I recommend that you install instead
+(or as well) using pip3, which will give you the opportunity to run
+the script with python3 (python2 will 
+
+NOTE: If you see this text 
+
+\texttt{key: {uid}:{api-key}}
+
+rather than a long random string of letters it means that \alert{you
+  are not logged in!} Click on the ``login/register'' red button on
+the top right to log in and resolve this. 
+
+\end{frame}
+
+\begin{frame}
+Once 
+
+\end{frame}
+\mode<all>

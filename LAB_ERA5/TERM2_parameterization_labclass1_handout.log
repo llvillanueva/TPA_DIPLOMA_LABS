@@ -1,0 +1,801 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.1)  13 APR 2017 10:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**TERM2_parameterization_labclass1_handout
+(./TERM2_parameterization_labclass1_handout.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerarticle.sty
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
+Package: beamerbasercs 2012/11/13 (rcs-revision cb16a617839f)
+)
+Package: beamerarticle 2012/04/15 (rcs-revision cc6557182d97)
+
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasemodes.sty
+Package: beamerbasemodes 2012/04/15 (rcs-revision cc6557182d97)
+\beamer@tempbox=\box26
+\beamer@tempcount=\count87
+\c@beamerpauses=\count88
+
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasedecode.sty
+Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
+\beamer@slideinframe=\count89
+\beamer@minimum=\count90
+)
+\beamer@commentbox=\box27
+\beamer@modecount=\count91
+))
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasearticle.sty
+Package: beamerbasearticle 2012/04/15 (rcs-revision cc6557182d97)
+
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseoptions.sty
+Package: beamerbaseoptions 2010/04/27 (rcs-revision 982469101dd6)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `override' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count92
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaserequires.sty
+Package: beamerbaserequires 2010/05/01 (rcs-revision efa082c6111d)
+
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasecompatibility.sty
+Package: beamerbasecompatibility 2012/05/01 (rcs-revision 67c48b3b652d)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasefont.sty
+Package: beamerbasefont 2012/09/19 (rcs-revision 733629cd0c6c)
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)))
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasetranslator.sty
+Package: beamerbasetranslator 2010/06/11 (rcs-revision 85fd1cc7fc42)
+
+(/usr/share/texmf/tex/latex/beamer/base/translator/translator.sty
+Package: translator 2010/06/12 ver 1.10
+
+(/usr/share/texmf/tex/latex/beamer/base/translator/translator-language-mappings
+.tex))) (/usr/share/texmf/tex/latex/beamer/base/beamerbasemisc.sty
+Package: beamerbasemisc 2012/02/24 (rcs-revision 2ff5461be705)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasetwoscreens.sty
+Package: beamerbasetwoscreens 2010/05/01 (rcs-revision efa082c6111d)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseoverlay.sty
+Package: beamerbaseoverlay 2012/11/11 (rcs-revision 6afbc49b1109)
+\beamer@argscount=\count93
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasetitle.sty
+Package: beamerbasetitle 2010/09/21 (rcs-revision f0446ed0b6ae)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasesection.sty
+Package: beamerbasesection 2012/11/11 (rcs-revision 0056eef6f17f)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseframe.sty
+Package: beamerbaseframe 2012/09/13 (rcs-revision dcd846607320)
+\c@framenumber=\count94
+LaTeX Info: Redefining \\ on input line 756.
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseverbatim.sty
+Package: beamerbaseverbatim 2012/08/30 (rcs-revision dfdb135076b3)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseframesize.sty
+Package: beamerbaseframesize 2011/09/12 (rcs-revision 70f9d8411e54)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseframecomponents.sty
+Package: beamerbaseframecomponents 2012/09/13 (rcs-revision dcd846607320)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasecolor.sty
+Package: beamerbasecolor 2010/06/06 (rcs-revision d1a9b48be06d)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasenotes.sty
+Package: beamerbasenotes 2010/05/01 (rcs-revision efa082c6111d)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasetoc.sty
+Package: beamerbasetoc 2012/10/02 (rcs-revision 5ed0f4010e8a)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasetemplates.sty
+Package: beamerbasetemplates 2010/05/01 (rcs-revision efa082c6111d)
+\beamer@sbttoks=\toks16
+
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaseauxtemplates.sty
+Package: beamerbaseauxtemplates 2012/05/01 (rcs-revision 67c48b3b652d)
+))
+(/usr/share/texmf/tex/latex/beamer/base/beamerbaselocalstructure.sty
+Package: beamerbaselocalstructure 2012/11/13 (rcs-revision ddfba79dac19)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks17
+))
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasenavigation.sty
+Package: beamerbasenavigation 2012/04/03 (rcs-revision 42a0f21a412d)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasetheorems.sty
+Package: beamerbasetheorems 2010/06/06 (rcs-revision 7e7cc5e53e9d)
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen103
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks19
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks20
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks21
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks28
+)
+\c@theorem=\count107
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasethemes.sty
+Package: beamerbasethemes 2010/05/01 (rcs-revision efa082c6111d)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count108
+\Gm@cntv=\count109
+\c@Gm@tempcnt=\count110
+\Gm@bindingoffset=\dimen112
+\Gm@wd@mp=\dimen113
+\Gm@odd@mp=\dimen114
+\Gm@even@mp=\dimen115
+\Gm@layoutwidth=\dimen116
+\Gm@layoutheight=\dimen117
+\Gm@layouthoffset=\dimen118
+\Gm@layoutvoffset=\dimen119
+\Gm@dimlist=\toks29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+
+Package epstopdf Warning: No graphics package `graphic{s,x}' loaded.
+
+)) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(./TERM2_parameterization_labclass1_header.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip49
+\bibsep=\skip50
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count111
+)
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks30
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box30
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks33
+))
+\pgf@x=\dimen122
+\pgf@y=\dimen123
+\pgf@xa=\dimen124
+\pgf@ya=\dimen125
+\pgf@xb=\dimen126
+\pgf@yb=\dimen127
+\pgf@xc=\dimen128
+\pgf@yc=\dimen129
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count112
+\c@pgf@countb=\count113
+\c@pgf@countc=\count114
+\c@pgf@countd=\count115
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count116
+\pgfsyssoftpath@bigbuffer@items=\count117
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen130
+\pgfmath@count=\count118
+\pgfmath@box=\box31
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count119
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen131
+\pgf@picmaxx=\dimen132
+\pgf@picminy=\dimen133
+\pgf@picmaxy=\dimen134
+\pgf@pathminx=\dimen135
+\pgf@pathmaxx=\dimen136
+\pgf@pathminy=\dimen137
+\pgf@pathmaxy=\dimen138
+\pgf@xx=\dimen139
+\pgf@xy=\dimen140
+\pgf@yx=\dimen141
+\pgf@yy=\dimen142
+\pgf@zx=\dimen143
+\pgf@zy=\dimen144
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen145
+\pgf@path@lasty=\dimen146
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen147
+\pgf@shorten@start@additional=\dimen148
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count120
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen149
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen150
+\pgf@pt@y=\dimen151
+\pgf@pt@temp=\dimen152
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen153
+\pgf@sys@shading@range@num=\count121
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box35
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box36
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen154
+\pgf@nodesepend=\dimen155
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen156
+\pgffor@skip=\dimen157
+\pgffor@stack=\toks37
+\pgffor@toks=\toks38
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count122
+\pgfplotmarksize=\dimen158
+)
+\tikz@lastx=\dimen159
+\tikz@lasty=\dimen160
+\tikz@lastxsaved=\dimen161
+\tikz@lastysaved=\dimen162
+\tikzleveldistance=\dimen163
+\tikzsiblingdistance=\dimen164
+\tikz@figbox=\box37
+\tikz@tempbox=\box38
+\tikztreelevel=\count123
+\tikznumberofchildren=\count124
+\tikznumberofcurrentchild=\count125
+\tikz@fig@count=\count126
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count127
+\pgfmatrixcurrentcolumn=\count128
+\pgf@matrix@numberofcolumns=\count129
+)
+\tikz@expandcount=\count130
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen165
+))
+\@indexfile=\write4
+\openout4 = `TERM2_parameterization_labclass1_handout.idx'.
+
+
+Writing index file TERM2_parameterization_labclass1_handout.idx
+(./TERM2_parameterization_labclass1_handout.aux
+(./TERM2_parameterization_labclass1.aux))
+\openout1 = `TERM2_parameterization_labclass1_handout.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count131
+\scratchdimen=\dimen166
+\scratchbox=\box39
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen167
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks40
+)
+(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
+onary/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-bibliograph
+y-dictionary/translator-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-environment
+-dictionary/translator-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-months-dict
+ionary/translator-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-numbers-dic
+tionary/translator-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-theorem-dic
+tionary/translator-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+LaTeX Info: Redefining \includegraphics on input line 41.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(99.58464pt, 426.79135pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=702.78308pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EveryShipout initializing macros
+\c@lcount=\count137
+
+(./TERM2_parameterization_labclass1_handout.toc)
+\tf@toc=\write5
+\openout5 = `TERM2_parameterization_labclass1_handout.toc'.
+
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout2 = `./TERM2_parameterization_labclass1.aux'.
+
+ (./TERM2_parameterization_labclass1.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 28.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 67--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+
+ []
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--258
+
+ []
+
+) [4] (./TERM2_parameterization_labclass1_handout.bbl) [5
+
+]
+(./TERM2_parameterization_labclass1_handout.aux
+(./TERM2_parameterization_labclass1.aux)) ) 
+Here is how much of TeX's memory you used:
+ 13223 strings out of 495028
+ 245091 string characters out of 6181498
+ 287783 words of memory out of 5000000
+ 16040 multiletter control sequences out of 15000+600000
+ 7710 words of font info for 30 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 58i,6n,55p,503b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts
+/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/co
+urier/ucrr8a.pfb>
+Output written on TERM2_parameterization_labclass1_handout.pdf (5 pages, 160107
+ bytes).
+PDF statistics:
+ 72 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

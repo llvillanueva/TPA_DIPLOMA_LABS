@@ -1,0 +1,31 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Sundqvist et~al.(1989)Sundqvist, Berge, and
+  Kristjansson}]{sundqvist:89}
+Sundqvist, H., E.~Berge, and J.~E. Kristjansson, 1989: {Condensation and cloud
+  parameterization studies with a mesoscale numerical weather prediction
+  model}. \textit{Mon. Wea. Rev.}, \textbf{117}, {1641--1657}.
+
+\bibitem[{Tiedtke(1993)}]{tiedtke:93}
+Tiedtke, M., 1993: {Representation of clouds in large-scale models}.
+  \textit{Mon. Wea. Rev.}, \textbf{{121}}, {3040--3061}.
+
+\bibitem[{Tompkins et~al.(2007)Tompkins, Gierens, and R\"adel}]{tompkins:07a}
+Tompkins, A.~M., K.~Gierens, and G.~R\"adel, 2007: {Ice supersaturation in the
+  ECMWF integrated forcast system}. \textit{Q. J. R. Meteorol. Soc.},
+  \textbf{133}, 53--63.
+
+\bibitem[{Xu and Randall(1996)}]{xu:96a}
+Xu, K.-M. and D.~A. Randall, 1996: {A semiempirical cloudiness parameterization
+  for use in climate models}. \textit{J. Atmos. Sci.}, \textbf{{53}},
+  {3084--3102}.
+
+\end{thebibliography}

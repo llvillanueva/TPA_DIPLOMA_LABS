@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Introduction}{1}{0}{1}
+\beamer@sectionintoc {2}{Exercise 1: coding up the Sundqvist scheme}{3}{0}{2}
+\beamer@sectionintoc {3}{NCO: more powerful metadata manipulation}{10}{0}{3}
+\beamer@sectionintoc {4}{Exercise 2: Some summary statistics}{12}{0}{4}
+\beamer@sectionintoc {5}{Exercise 3: Improving the self-consistency}{13}{0}{5}
+\beamer@sectionintoc {6}{Exercise 4: Impact of subgrid variability}{14}{0}{6}
+\beamer@sectionintoc {7}{Exercise 5: The Xu and Randall scheme}{15}{0}{7}
+\beamer@endinputifotherversion {3.24pt}

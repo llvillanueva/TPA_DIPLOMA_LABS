@@ -1,0 +1,268 @@
+
+\section{Introduction}
+
+\frame{
+We are going to use an ECMWF output field in \alert{netcdf} format.
+
+The contains variables on model levels for one day for: 
+\begin{itemize}
+\item $T$ : Temperature
+\item $r$ : Relative Humidity (calculated as in the model)
+\item $q$ : specific humidity
+\item $clwc$ : Specific cloud liquid water content
+\item $ciwc$ : Specific ice liquid water content
+\item $cc$ : Cloud Cover
+\end{itemize}
+
+The last 3 cloud variables are produced by the ECMWF prognostic cloud
+scheme described in \cite{tiedtke:93} and \cite{tompkins:07a}.
+}
+
+\frame{
+The aim of this exercise is to code up some simple DIAGNOSTIC RH-based
+cloud cover parameterizations and compare how they do relative to the
+prognostic scheme.
+
+We are going to do this using three tools:
+\begin{itemize}
+\item \texttt{ncview} : to quicklook view netcdf files 
+\item \texttt{ncdump} : To examine netcdf file headers and contents
+\item \texttt{cdo} : climate data operators, a programme to manipulate
+  netcdf files (\url{https://code.zmaw.de/projects/cdo})
+\end{itemize}
+}
+If you need to install any of these tools on a linux machine you can 
+
+
+\section{Exercise 1: coding up the Sundqvist scheme}
+\frame{
+We will work together through exercise 1, while the subsequent
+exercises you will perform in your groups.
+
+\begin{enumerate}
+\item code up the Sundqvist scheme (SS) to diagnose CC as a function of RH  
+\item examine maps of the bias between ECMWF CC and Sundqvist CC
+\item show a vertical profile of the RMS error (difference) between
+  ECMWF and Sundqvist CC (a) globally (b) Tropics (lat $<20$) (c) NH
+  extra tropics (lat$>30$ deg).
+\end{enumerate}
+}
+
+\frame{
+Reminder: Subgrid-scale fluctuations allow cloud
+to form when $\overline{RH} < 1$.  $RH$ schemes formulize this by setting
+a critical $RH$ (denoted $RH_{crit}$) at which cloud is assumed to form, and
+then increase $C$ according to a monotonically increasing function of $RH$,
+with $C$=1 identically when $RH$=1.  
+
+One commonly used function was given by \cite{sundqvist:89}:
+\begin{equation}
+C=1-\sqrt{\frac{1-RH}{1-RH_{crit}}}
+\label{sund_eqn}
+\end{equation}
+In this first exercise we will assume  $RH_{crit}$=0.6
+}
+
+\frame{
+Get the datafile \texttt{ecmwf\_data.nc} here:
+
+\texttt{\url{http://clima-dods.ictp.it/Users/tompkins/diploma/}}
+\newline
+
+Examine the file :  
+
+\texttt{ncdump -h ecmwf\_data.nc}
+\newline
+
+View the file 
+
+\texttt{ncview ecmwf\_data.nc}
+\newline
+}
+
+\frame{
+Using \texttt{cdo} - Download the manual from the clima-dods page, or
+the \href{https://code.mpimet.mpg.de/projects/cdo/}{cdo page}. The general form of cdo is 
+
+\texttt{cdo command input output}
+\newline
+
+e.g. Extract the fields we need:
+
+\texttt{cdo selvar,r ecmwf\_data.nc rh.nc}
+
+\texttt{cdo selvar,cc ecmwf\_data.nc cc.nc}
+\newline
+
+The RH field has units of percent - we change it to a fraction first:
+\texttt{cdo divc,100 rh.nc  rhf.nc}
+
+}
+
+\frame{
+Let's form the equation.  We can do this from the command line or by
+putting the commands in a bash script.
+
+How to calculate $1-RH$?
+
+\texttt{cdo mulc,-1 rhf.nc rhm.nc}
+
+\texttt{cdo addc,1 rhm.nc 1-rh.nc}
+\newline
+
+\texttt{cdo} also allows you to \alert{pipe} commands:
+
+\texttt{cdo addc,1 -mulc,-1 rhf.nc 1-rh.nc}
+\newline
+
+Now we divide by $1-RH_{crit}$:
+
+\texttt{cdo divc,0.4 1-rh.nc 1-rh\_d\_1-rhc.nc}
+}
+
+\frame{Now, remember that RH can exceed 1.0, or be less than
+  $RH_{crit}$  and so we want to clip
+  those negative values or values exceeding 1.  
+To do this we need to define a mask - for negative values it is
+straightforward:
+
+\texttt{cdo gec,0 1-rh\_d\_1-rhc.nc mask.nc}
+
+\texttt{cdo mul 1-rh\_d\_1-rhc.nc mask.nc temp1.nc}
+\newline
+
+for max values is a little more tricky.  This is one way, perhaps you
+can find a quicker one:
+
+\texttt{cdo gtc,1 temp1.nc mask\_high.nc}
+
+\texttt{cdo lec,1 temp1.nc mask\_low.nc}
+
+\texttt{cdo mul temp1.nc mask\_low.nc temp2.nc}
+
+\texttt{cdo add temp2.nc mask\_high.nc 1-rh\_d\_1-rhc\_bnd.nc }
+\newline
+Clean some files:
+\texttt{rm -f temp?.nc}
+}
+
+\frame{
+Now we finish the equation by adding the 1-SQRT part:
+
+\texttt{cdo addc,1 -mulc,-1 -sqrt 1-rh\_d\_1-rhc\_bnd.nc
+  sundqvistcc.nc}
+\newline
+
+check it out:
+
+\texttt{ncview sundqvistcc.nc} 
+\newline
+
+Calculate the difference map between Sundqvist CC and Tiedtke CC:
+
+\texttt{cdo sub sundqvistcc.nc cc.nc ccdiff.nc}
+
+\texttt{ncview ccdiff.nc}
+}
+
+\section{NCO: more powerful metadata manipulation}
+
+While CDO can change some attributes of variables, it is quite limited
+in what it can do regarding the dimensions, variables, metadata, and
+global attributes in a netcdf file.  For this task, a much more
+powerful set of functions are available collectively in NCO.  NCO
+commands also allow you to directly modify the netcdf file, but it is
+better to test the function first!
+
+\frame{
+As an example of NCO, we presently have a file sundqvist.nc that
+contains our diagnostic cloud cover, but the variable name still
+refers to relative humidity.  This could be misleading if we pass the
+file to someone else, even if the CDO command history is stored in the
+global attributes.  
+
+To change the variable name to cloud cover (cc), we can thus use
+\texttt{ncrename} (\url{http://linux.die.net/man/1/ncrename}):
+
+\texttt{ncrename -v r,cc -h sundqvistcc.nc}
+
+This is fine but we may also want to change the variable metadate. For
+this we use \texttt{ncatted} (see \url{http://linux.die.net/man/1/ncatted}):
+
+\texttt{ncatted -O -a units,cc,o,c,fraction}
+
+\texttt{ncatted -O -a long\_name,cc,o,c,''cloud fraction''}
+
+Note the double quotes if the name has a space.
+}
+
+
+
+
+\section{Exercise 2: Some summary statistics}
+ \frame{
+\alert{Ex 2}:
+For the following you will need the new CDO commands 
+
+\texttt{sellonlatbox}
+\texttt{fldmean}
+\newline
+
+\begin{enumerate}
+\item Calculate the mean bias as a function of height (=model level)
+\item Calculate the RMS error as a function of height
+\item Repeat for the tropics (mod(lat)$<20$ deg) and NH extratropics
+  (lat$>30$ deg).
+\item Try to make a plot of the PDF of cloud cover - Describe and
+  interpret what you find?
+\end{enumerate}
+}
+
+\section{Exercise 3: Improving the self-consistency}
+ \frame{
+
+\alert{Ex 3}:The Tiedtke scheme has liquid and ice cloud water as prognostic
+variables.  Basing the CC only on RH will likely lead to non-zero
+cloud cover being diagnosed where the cloud water (ice+liquid) is
+zero.   In this exercise, use a mask to set the diagnosed Sundqvist
+cloud cover to zero in any grid box where the total cloud water
+(ice+liquid) is zero.  Repeat the analysis of Exercise 2.  Does the
+use of the self-consistent cloud water improve the match of the
+Sundqvist and Tiedtke cloud cover?
+}
+
+\section{Exercise 4: Impact of subgrid variability}
+ \frame{
+
+\alert{Ex 4}:  What parameter in the sundqvist scheme represents the
+amount of subgrid-scale variability?  Does subgrid-scale variance of
+water increase or decrease when this parameter is increased?
+Investigate the impact of setting the threshold for cloud formation to
+50, 70, 80 and 90\%, does the cloud fraction respond as you would
+expect?  Do you find that one value works best at all heights, or do
+you find that different thresholds are appropriate at different
+heights?
+}
+
+
+ \frame{
+\section{Exercise 5: The Xu and Randall scheme}
+\alert{Ex 5}: \cite{xu:96a} used a cloud resolving model (CRM) to derive an
+empirical relationship for cloud cover based on the two predictors of
+$RH$ and cloud water content:
+\begin{equation}
+C = RH^p  \left[ 1 - exp \left( \frac{ - \alpha_0 \overline{q_l}}
+{(q_s-q_v)^\gamma} \right) \right],
+%C = RH^p  \left[ 1 - exp \right]
+\end{equation}
+where $\gamma$, $\alpha_0$ and $p$ are 'tunable' constants of the
+scheme, with values chosen using the CRM data.
+\newline
+
+For exercise 3, look up the paper online to get the constants and code
+up the scheme.  Repeat the questions in exercise 2 with this new
+scheme.   Which scheme is closer to ECMWF's Tiedtke scheme, the Xu or the
+Sundqvist scheme?
+}
+
+\mode<all>
