@@ -23,10 +23,11 @@ from scipy import integrate     # scipy ODE routine
 # define problem
 #
 class parameters:               # parameters for functions, default values
-    r = 10.                     # Rayleigh number, 28
-    Pr = 10                     # Prandtl number
-    b = 8./3.                   # wavelength (beta) parameter 
-#
+    r = 28.                     # Rayleigh number, 28
+    Pr = 10                     # Prandtl number, 10
+    b = 8./3.                   # wavelength (beta) parameter 8/3
+
+    #
 # define functions for ODE solvers, need to be in f(t,x,par) format
 #
 # Lorenz equations, dx/dt for W, T1, T2
@@ -41,15 +42,14 @@ def f2(t,x,par): # dT2/dt = W T1 - b T2
 f = [f0,f1,f2]              # functions for the time derivatives of W, T1, T2
 
 
-x = [1,8,14]             # initial conditions
-#x = [0,0.5,0.5]             # initial conditions
-#x = [.1,.1,.1]             # initial conditions
+x = [5,5,5]             # initial conditions
+x_pert = [i+0.1 for i in x]     # initial conditions perturbation
 
 par = parameters()          # set parameters
 #par.r = 350                     # single orbit +-
 #par.r = 100.5                     # orbit ++-
 #par.r = 160                     #  orbit ++--
-par.r = 99.65                     #  orbit +--+--
+#par.r = 99.65                     #  orbit +--+--
 #par.r = 28  # chaotic
 #par.r = 10  # stable
 
@@ -57,10 +57,10 @@ par.r = 99.65                     #  orbit +--+--
 # solver parameters
 #
 hs = .002                  # timestep
-#nsteps = 30000              # total number of steps
-nsteps = 5000              # total number of steps
+nsteps = 10000              # total number of steps
 ntracks = 1                 # number of states to track (not implemented yet)
 xout = np.empty((nsteps,3))     # pre-allocate stored output
+xpout = np.empty((nsteps,3))    # pre-allocate stored output perturbed
 time = np.empty(nsteps)     # pre-allocate stored output times
 itime= np.arange(0,nsteps)             # timestep index
 
@@ -71,9 +71,10 @@ pindex=itime                    # whole time series
 #pindex=np.arange(nsteps-20000,nsteps) # last 20000 steps
 #pindex=np.arange(0,1000) # first 1000 steps
 #pindex=np.arange(0,2000) # first 2000 steps
-pmode = 3                       # 1: plot solution against time
+pmode = 1                       # 1: plot solution against time
                                 # 2: phase space plot
                                 # 3: animation
+                                # 4: 2 param line plot
 idim=range(ndim)            # indexing array
 external_ode_solver = 1        # which solver should we use?
 
@@ -82,6 +83,7 @@ if external_ode_solver == 1:
         return [f[0](t,x,loc_par), f[1](t,x,loc_par), f[2](t,x,loc_par)]
     time = np.linspace(0,nsteps*hs, nsteps) # set up time vector
     xout = integrate.odeint(deriv, x, time,rtol=1e-5) # integrate using SciPy
+    xpout = integrate.odeint(deriv,x_pert, time,rtol=1e-5) # integrate using SciPy
 
 #
 # make plots
@@ -94,20 +96,31 @@ if pmode == 1:
         if i==0:
             ax[i].set_title(title_string)
         ax[i].plot(time[pindex],xout[pindex,i])
+        ax[i].plot(time[pindex],xpout[pindex,i])
         ax[i].set_ylabel(vlabel[i])
+    plt.show()
 
 elif pmode == 2:                # 3D plot
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     ax.plot(xout[pindex,0], xout[pindex,1], xout[pindex,2], label=title_string)
-
-
+    ax.plot(xpout[pindex,0], xout[pindex,1], xout[pindex,2], color="red",label=title_string)
+    
     ax.set_xlabel(vlabel[0])
     ax.set_ylabel(vlabel[1])
     ax.set_zlabel(vlabel[2])
     ax.legend()
     plt.show()
 
+elif pmode==4:
+    fig,ax=plt.subplots()
+    ax.plot(xout[pindex,0], label=title_string)
+    ax.plot(xpout[pindex,0], label="perturbed")
+    ax.legend()
+    plt.show()
+
+
+    
 elif pmode == 3:                # 3D animation of trajectory
     fig = plt.figure()
     # Set up figure & 3D axis for animation
