@@ -43,7 +43,7 @@ f = [f0,f1,f2]              # functions for the time derivatives of W, T1, T2
 
 
 x = [5,5,5]             # initial conditions
-x_pert = [i+0.1 for i in x]     # initial conditions perturbation
+x_pert = [i+0.3 for i in x]     # initial conditions perturbation
 
 par = parameters()          # set parameters
 #par.r = 350                     # single orbit +-
@@ -57,7 +57,7 @@ par = parameters()          # set parameters
 # solver parameters
 #
 hs = .002                  # timestep
-nsteps = 10000              # total number of steps
+nsteps = 5000              # total number of steps
 ntracks = 1                 # number of states to track (not implemented yet)
 xout = np.empty((nsteps,3))     # pre-allocate stored output
 xpout = np.empty((nsteps,3))    # pre-allocate stored output perturbed
@@ -71,10 +71,11 @@ pindex=itime                    # whole time series
 #pindex=np.arange(nsteps-20000,nsteps) # last 20000 steps
 #pindex=np.arange(0,1000) # first 1000 steps
 #pindex=np.arange(0,2000) # first 2000 steps
-pmode = 1                       # 1: plot solution against time
+pmode = 3                       # 1: plot solution against time
                                 # 2: phase space plot
                                 # 3: animation
                                 # 4: 2 param line plot
+psave=1
 idim=range(ndim)            # indexing array
 external_ode_solver = 1        # which solver should we use?
 
@@ -82,9 +83,16 @@ if external_ode_solver == 1:
     def deriv(x, t, loc_par=par):    # define the derivative functions
         return [f[0](t,x,loc_par), f[1](t,x,loc_par), f[2](t,x,loc_par)]
     time = np.linspace(0,nsteps*hs, nsteps) # set up time vector
-    xout = integrate.odeint(deriv, x, time,rtol=1e-5) # integrate using SciPy
-    xpout = integrate.odeint(deriv,x_pert, time,rtol=1e-5) # integrate using SciPy
+    xpout = integrate.odeint(deriv,x_pert,time,rtol=1e-5) # integrate using SciP
+    xout = integrate.odeint(deriv, x,time,rtol=1e-5) # integrate using SciPy
 
+def showsave():
+    if psave:
+        plt.savefig("lorenz_p"+str(pmode)+".pdf")
+    else:
+        plt.show()
+
+        
 #
 # make plots
 title_string='Lorenz system for r=%g, Pr=%g, b=%g' % (par.r,par.Pr,par.b)
@@ -98,28 +106,29 @@ if pmode == 1:
         ax[i].plot(time[pindex],xout[pindex,i])
         ax[i].plot(time[pindex],xpout[pindex,i])
         ax[i].set_ylabel(vlabel[i])
-    plt.show()
+    showsave()
+    
 
 elif pmode == 2:                # 3D plot
     fig = plt.figure()
     ax = fig.gca(projection='3d')
-    ax.plot(xout[pindex,0], xout[pindex,1], xout[pindex,2], label=title_string)
-    ax.plot(xpout[pindex,0], xout[pindex,1], xout[pindex,2], color="red",label=title_string)
+    ax.plot(xout[pindex,0],  xout[pindex,1], xout[pindex,2], label=title_string)
+    ax.plot(xpout[pindex,0], xpout[pindex,1], xpout[pindex,2], color="red",label=title_string)
     
     ax.set_xlabel(vlabel[0])
     ax.set_ylabel(vlabel[1])
     ax.set_zlabel(vlabel[2])
     ax.legend()
-    plt.show()
+    showsave()
 
 elif pmode==4:
     fig,ax=plt.subplots()
-    ax.plot(xout[pindex,0], label=title_string)
-    ax.plot(xpout[pindex,0], label="perturbed")
+    ax.plot(time,xout[pindex,0], label=title_string)
+    ax.plot(time,xpout[pindex,0], label="perturbed")
+    ax.set_xlabel("time")
+    ax.set_ylabel("X")
     ax.legend()
-    plt.show()
-
-
+    showsave()
     
 elif pmode == 3:                # 3D animation of trajectory
     fig = plt.figure()
@@ -138,11 +147,13 @@ elif pmode == 3:                # 3D animation of trajectory
     # set up lines and points
     lines = []
     pts = []
-    colors = plt.cm.jet(np.linspace(0, 1, 2*ntracks))
+    colors = ["blue","orange"] # plt.cm.jet(np.linspace(0, 1, 2*ntracks))
     
     for i in np.arange(0,2,2*ntracks):
-        lines += ax.plot([], [], [], '-', colors[i])
-        pts += ax.plot([], [], [], 'o', colors[i+1])
+        print(np.arange(0,2,2*ntracks))
+        print("cols",colors)
+        lines += ax.plot([], [], [], '-')
+        pts += ax.plot([], [], [], 'o')
 
     # prepare the axes limits
     #ax.set_xlim((-25, 25))
@@ -184,6 +195,7 @@ elif pmode == 3:                # 3D animation of trajectory
     # instantiate the animator1.
     anim = animation.FuncAnimation(fig, animate, init_func=init,
                                    frames=500, interval=30, blit=True)
-    anim.save('lorenz_attractor.mp4', fps=15, extra_args=['-vcodec', 'libx264'])
+    anim.save('lorenz_attractor.mp4', fps=15)# extra_args=['-vcodec', 'libx264'])
 else:
     print( 'pmode',pmode,' undefined')
+
