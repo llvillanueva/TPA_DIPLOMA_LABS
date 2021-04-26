@@ -1,0 +1,6 @@
+# in _config.yml
+title: "Earth System Modelling"
+logo: images/logo.png
+execute:
+  execute_notebooks: "off"
+  
