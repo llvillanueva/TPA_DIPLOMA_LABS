@@ -42,6 +42,7 @@ f = [f0,f1,f2]              # functions for the time derivatives of W, T1, T2
 
 
 x = [1,8,14]             # initial conditions
+x2 = [1.1,8,14]             # initial conditions
 #x = [0,0.5,0.5]             # initial conditions
 #x = [.1,.1,.1]             # initial conditions
 
@@ -144,7 +145,6 @@ elif pmode == 3:                # 3D animation of trajectory
         for line, pt in zip(lines, pts):
             line.set_data([], [])
             line.set_3d_properties([])
-            
             pt.set_data([], [])
             pt.set_3d_properties([])
         return lines + pts
