@@ -1,0 +1,34 @@
+
+New ERA5 notebook 
+
+Part 1:
+
+- download the T2m and rainfall.
+
+- apply a land sea mask 
+
+- calculate the land trend and the ocean trend 2010-2020 and
+  1979-1989.
+
+- Calculate a zonal mean temperature change and make a plot 
+
+- Calculate a map of the change and plot
+
+- Calculate the linear trend and plot map 
+
+
+
+Part 2: Seasonal Heat wave index - each student gets a different index
+
+- Define an heat wave index 
+(e.g. 95% percentile of daily temperature, sustained for 3 days at a
+time.)
+
+- Calculate the occurrence of the index
+
+- Wait though, adaption to trends, so detrend the data before
+  calculating the index
+
+- download 5 seasonal models T2m, qv - calculate index, calculate a
+  correlation score at different leads times. 
+

@@ -1,0 +1,16 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: intro
+- file: content_physics
+  sections:
+    - file: notebooks/radeq.ipynb
+    - file: notebooks/rce.ipynb
+    - file: notebooks/orbital.ipynb
+- file: content_feedback
+  sections:
+    - file: notebooks/Energy_Balance_Model.ipynb
+    - file: notebooks/EBM_0D_ice_water.ipynb
+    - file: notebooks/daisy_world.ipynb
+
+
