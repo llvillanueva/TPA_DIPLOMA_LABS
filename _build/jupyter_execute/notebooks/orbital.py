@@ -50,7 +50,7 @@ from climlab import constants as const
 
 # **Spectral analysis** of such records reveals peaks at some special frequencies:
 
-# ![ImbrieImbrie_Fig42.png](attachment:ImbrieImbrie_Fig42.png)
+# 
 # <div>
 # <img src="attachment:ImbrieImbrie_Fig42.png" width="300"/>
 # </div>
@@ -85,8 +85,10 @@ from climlab import constants as const
 
 from climlab.solar.insolation import daily_insolation
 days = np.linspace(0, const.days_per_year, 365)
+
 Qnorth = daily_insolation(90,days)
 Qsouth = daily_insolation(-90,days)
+
 print( 'Daily average insolation at summer solstice:')
 print( 'North Pole: %0.2f W/m2.' %np.max(Qnorth))
 print( 'South Pole: %0.2f W/m2.' %np.max(Qsouth))
@@ -124,25 +126,8 @@ print( 'South Pole: %0.2f W/m2.' %np.max(Qsouth))
 # 
 
 # The Earth’s orbit around the Sun traces out an **ellipse**, with the Sun at one focal point.
-
 # 
-# ![ImbrieImbrie_Fig14.png](attachment:ImbrieImbrie_Fig14.png)
-
-# > Imbrie, J. and Imbrie, K. P. (1986). Ice Ages: Solving the Mystery. Harvard University Press, Cambridge, Massachusetts.
-
-# ### How to draw an ellipse
-# 
-# 1. Take any two points on a plane
-# 2. Attach the two ends of a piece of string to the two points. 
-# 3. Pull the loose string out as far as it will go in any direction, and place a pencil mark at that point.
-# 4. Do the same for every possible direction.
-# 5. Congratulations, you have just drawn a perfect ellipse. The two points are called **foci** or focal points.
-
-# Keep this in mind, and you will always understand the **mathematical definition of an ellipse**:
-# 
-# > An ellipse is a curve that is the locus of all points in the plane the sum of whose distances from two fixed points (the foci) is a positive constant.
-# 
-# In our case, the positive constant is the total length of the string.
+# ![esm_part1_orbit_earth.png](attachment:esm_part1_orbit_earth.png)
 
 # ### Perihelion and Aphelion
 # 
@@ -194,7 +179,7 @@ print( 'South Pole: %0.2f W/m2.' %np.max(Qsouth))
 # 
 # We call the gradual change over time of the longitude of perihelion the **precession of the equinoxes** (or just precession).  It is the **gradual change in the time of year at which the Earth is closest to the Sun**.
 
-# #### Question
+# ### Question
 # 
 # Can there be any precession for a planet with a *perfectly circular* orbit (zero eccentricity)?
 
@@ -245,6 +230,7 @@ OrbitalTable
 
 
 kyears = np.arange( -1000., 1.)
+print(kyears)
 orb = OrbitalTable.interp(kyear=kyears)
 orb
 
@@ -262,17 +248,22 @@ orb
 # In[6]:
 
 
-fig = plt.figure( figsize = (8,8) )
-ax1 = fig.add_subplot(3,1,1)
+fig = plt.figure( figsize = (10,12) )
+
+ax1=fig.add_subplot(3,1,1)
 ax1.plot( kyears, orb['ecc'] )
-ax1.set_title('Eccentricity $e$', fontsize=18 )
-ax2 = fig.add_subplot(3,1,3)
+ax1.set_title('Eccentricity $e$', fontsize=18)
+
+ax2 = fig.add_subplot(3,1,2)
 ax2.plot( kyears, orb['ecc'] * np.sin( np.deg2rad( orb['long_peri'] ) ) )
 ax2.set_title('Precessional parameter $e \sin(\Lambda)$', fontsize=18 )
-ax2.set_xlabel( 'Thousands of years before present', fontsize=14 )
-ax3 = fig.add_subplot(3,1,2)
+
+ax3 = fig.add_subplot(3,1,3)
 ax3.plot( kyears, orb['obliquity'] )
 ax3.set_title('Obliquity (axial tilt) $\Phi$', fontsize=18 )
+
+ax3.set_xlabel( 'Thousands of years before present', fontsize=14 )
+plt.savefig('plot.png')
 
 
 # ### Timescales of orbital variation:
@@ -311,13 +302,15 @@ from climlab.solar.insolation import daily_insolation
 # In[8]:
 
 
-thisorb = {'ecc':0., 'obliquity':0., 'long_peri':0.}
+thisorb = {'ecc':0.0, 'obliquity':20., 'long_peri':0.}
+print(thisorb)
 
 
 # In[9]:
 
 
 days = np.linspace(1.,20.)/20 * const.days_per_year
+
 daily_insolation(90, days, thisorb)
 
 
@@ -351,11 +344,12 @@ daily_insolation(90, days)
 
 
 #  Plot summer solstice insolation at 65ºN
-years = np.linspace(-100, 0, 101)  #  last 100 kyr
-thisorb = OrbitalTable.interp(kyear=years)
+
+kyears = np.linspace(-100, 0, 101)  #  last 100 kyr
+thisorb = OrbitalTable.interp(kyear=kyears)
 S65 = daily_insolation( 65, 172, thisorb )
 fig, ax = plt.subplots()
-ax.plot(years, S65)
+ax.plot(kyears, S65)
 ax.set_xlabel('Thousands of years before present')
 ax.set_ylabel('W/m2')
 ax.set_title('Summer solstice insolation at 65N')
@@ -385,14 +379,21 @@ ax.grid()
 
 
 lat = np.linspace(-90, 90, 181)
+
 days = np.linspace(1.,50.)/50 * const.days_per_year
 
 orb_0 = OrbitalTable.interp(kyear=0)  # present-day orbital parameters
 orb_10 = OrbitalTable.interp(kyear=-10)  # orbital parameters for 10 kyrs before present
 orb_23 = OrbitalTable.interp(kyear=-23)   # 23 kyrs before present
+
 Q_0 = daily_insolation( lat, days, orb_0 )    
 Q_10 = daily_insolation( lat, days, orb_10 )   # insolation arrays for each of the three sets of orbital parameters
 Q_23 = daily_insolation( lat, days, orb_23 )
+
+
+Qlist=[]
+for y in [0,-10,-23]:
+    Qlist.append(daily_insolation(lat,days,OrbitalTable.interp(kyear=y)))
 
 
 # In[13]:
@@ -440,6 +441,22 @@ print( np.average(np.mean(Qdiff,axis=1), weights=np.cos(np.deg2rad(lat))) )
 # **Ice ages are driven by seasonal and latitudinal redistributions of solar energy**, NOT by changes in the total global amount of solar energy!
 # 
 
+# ## EXERCISE
+# 
+# If you recall, 6 Kyr ago, the Sahara was covered by vegetation, and the monsoon penetrated far further north over Africa.  Repeat the previous exercise but comparing the isolation 6000 years ago to the present day.
+# 
+# 
+# ~~~[note]
+# 
+# this is a note?
+# 
+# ~~~
+# 
+# 
+# *How much more insolation was there at 40N at the summer solstice?*
+# 
+# 
+
 # ____________
 # <a id='section7'></a>
 # 
@@ -470,9 +487,10 @@ print( Q.shape)
 
 
 Qann = np.mean(Q, axis=1)  # time average over the year
-print( Qann.shape)
+print(Qann.shape)
+print (kyears)
 Qglobal = np.empty_like( kyears )
-for n in range( kyears.size ):   # global area-weighted average
+for n in range(kyears.shape[0] ):   # global area-weighted average
     Qglobal[n] = np.average( Qann[:,n], weights=np.cos(np.deg2rad(lat)))
 print( Qglobal.shape)
 
@@ -480,7 +498,7 @@ print( Qglobal.shape)
 # In[17]:
 
 
-fig = plt.figure(figsize = (16,10))
+fig = plt.figure(figsize = (16,12))
 ax = []
 for n in range(6):
     ax.append(fig.add_subplot(3,2,n+1))
@@ -537,7 +555,8 @@ for n in [4,5]:
 # 
 # ## Credits
 # 
-# Adrian Tompkins forked this notebook april 23rd 
+# Adrian Tompkins forked this notebook April 23rd 2021. 
+# 
 # This notebook is part of [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook), an open-source textbook developed and maintained by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.
 # 
 # It is licensed for free and open consumption under the

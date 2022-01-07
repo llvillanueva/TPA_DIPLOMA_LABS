@@ -1,120 +1,41 @@
 Traceback (most recent call last):
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
-    executenb(
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 1112, in execute
-    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 74, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 53, in just_run
-    return loop.run_until_complete(coro)
-  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
-    return future.result()
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 553, in async_execute
-    await self.async_execute_cell(
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 857, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-#  This code is used just to create the skew-T plot of global, annual mean air temperature
-%matplotlib inline
-import numpy as np
-import matplotlib.pyplot as plt
-import xarray as xr
-from metpy.plots import SkewT
-ncep_url = "http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/ncep.reanalysis.derived/"
-ncep_air = xr.open_dataset( ncep_url + "pressure/air.mon.1981-2010.ltm.nc", use_cftime=True)
-#  Take global, annual average 
-coslat = np.cos(np.deg2rad(ncep_air.lat))
-weight = coslat / coslat.mean(dim='lat')
-Tglobal = (ncep_air.air * weight).mean(dim=('lat','lon','time'))
-------------------
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/file_manager.py[0m in [0;36m_acquire_with_cache_info[0;34m(self, needs_lock)[0m
-[1;32m    198[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 199[0;31m                 [0mfile[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_cache[0m[0;34m[[0m[0mself[0m[0;34m.[0m[0m_key[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    200[0m             [0;32mexcept[0m [0mKeyError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/lru_cache.py[0m in [0;36m__getitem__[0;34m(self, key)[0m
-[1;32m     52[0m         [0;32mwith[0m [0mself[0m[0;34m.[0m[0m_lock[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 53[0;31m             [0mvalue[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_cache[0m[0;34m[[0m[0mkey[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     54[0m             [0mself[0m[0;34m.[0m[0m_cache[0m[0;34m.[0m[0mmove_to_end[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/ncep.reanalysis.derived/pressure/air.mon.1981-2010.ltm.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False))]
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 626, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 96, in ensure_async
+    result = await obj
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/jupyter_client/channels.py", line 230, in get_msg
+    raise Empty
+_queue.Empty
 
 During handling of the above exception, another exception occurred:
 
-[0;31mOSError[0m                                   Traceback (most recent call last)
-[0;32m<ipython-input-1-a2e438e8f363>[0m in [0;36m<module>[0;34m[0m
-[1;32m      6[0m [0;32mfrom[0m [0mmetpy[0m[0;34m.[0m[0mplots[0m [0;32mimport[0m [0mSkewT[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      7[0m [0mncep_url[0m [0;34m=[0m [0;34m"http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/ncep.reanalysis.derived/"[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 8[0;31m [0mncep_air[0m [0;34m=[0m [0mxr[0m[0;34m.[0m[0mopen_dataset[0m[0;34m([0m [0mncep_url[0m [0;34m+[0m [0;34m"pressure/air.mon.1981-2010.ltm.nc"[0m[0;34m,[0m [0muse_cftime[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      9[0m [0;31m#  Take global, annual average[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     10[0m [0mcoslat[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mcos[0m[0;34m([0m[0mnp[0m[0;34m.[0m[0mdeg2rad[0m[0;34m([0m[0mncep_air[0m[0;34m.[0m[0mlat[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/api.py[0m in [0;36mopen_dataset[0;34m(filename_or_obj, group, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, engine, chunks, lock, cache, drop_variables, backend_kwargs, use_cftime, decode_timedelta)[0m
-[1;32m    552[0m [0;34m[0m[0m
-[1;32m    553[0m         [0mopener[0m [0;34m=[0m [0m_get_backend_cls[0m[0;34m([0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 554[0;31m         [0mstore[0m [0;34m=[0m [0mopener[0m[0;34m([0m[0mfilename_or_obj[0m[0;34m,[0m [0;34m**[0m[0mextra_kwargs[0m[0;34m,[0m [0;34m**[0m[0mbackend_kwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    555[0m [0;34m[0m[0m
-[1;32m    556[0m     [0;32mwith[0m [0mclose_on_error[0m[0;34m([0m[0mstore[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/netCDF4_.py[0m in [0;36mopen[0;34m(cls, filename, mode, format, group, clobber, diskless, persist, lock, lock_maker, autoclose)[0m
-[1;32m    376[0m             [0mnetCDF4[0m[0;34m.[0m[0mDataset[0m[0;34m,[0m [0mfilename[0m[0;34m,[0m [0mmode[0m[0;34m=[0m[0mmode[0m[0;34m,[0m [0mkwargs[0m[0;34m=[0m[0mkwargs[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    377[0m         )
-[0;32m--> 378[0;31m         [0;32mreturn[0m [0mcls[0m[0;34m([0m[0mmanager[0m[0;34m,[0m [0mgroup[0m[0;34m=[0m[0mgroup[0m[0;34m,[0m [0mmode[0m[0;34m=[0m[0mmode[0m[0;34m,[0m [0mlock[0m[0;34m=[0m[0mlock[0m[0;34m,[0m [0mautoclose[0m[0;34m=[0m[0mautoclose[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    379[0m [0;34m[0m[0m
-[1;32m    380[0m     [0;32mdef[0m [0m_acquire[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mneeds_lock[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/netCDF4_.py[0m in [0;36m__init__[0;34m(self, manager, group, mode, lock, autoclose)[0m
-[1;32m    324[0m         [0mself[0m[0;34m.[0m[0m_group[0m [0;34m=[0m [0mgroup[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    325[0m         [0mself[0m[0;34m.[0m[0m_mode[0m [0;34m=[0m [0mmode[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 326[0;31m         [0mself[0m[0;34m.[0m[0mformat[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mds[0m[0;34m.[0m[0mdata_model[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    327[0m         [0mself[0m[0;34m.[0m[0m_filename[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mds[0m[0;34m.[0m[0mfilepath[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    328[0m         [0mself[0m[0;34m.[0m[0mis_remote[0m [0;34m=[0m [0mis_remote_uri[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/netCDF4_.py[0m in [0;36mds[0;34m(self)[0m
-[1;32m    385[0m     [0;34m@[0m[0mproperty[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    386[0m     [0;32mdef[0m [0mds[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 387[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_acquire[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    388[0m [0;34m[0m[0m
-[1;32m    389[0m     [0;32mdef[0m [0mopen_store_variable[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mvar[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/netCDF4_.py[0m in [0;36m_acquire[0;34m(self, needs_lock)[0m
-[1;32m    379[0m [0;34m[0m[0m
-[1;32m    380[0m     [0;32mdef[0m [0m_acquire[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mneeds_lock[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 381[0;31m         [0;32mwith[0m [0mself[0m[0;34m.[0m[0m_manager[0m[0;34m.[0m[0macquire_context[0m[0;34m([0m[0mneeds_lock[0m[0;34m)[0m [0;32mas[0m [0mroot[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    382[0m             [0mds[0m [0;34m=[0m [0m_nc4_require_group[0m[0;34m([0m[0mroot[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0m_group[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0m_mode[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    383[0m         [0;32mreturn[0m [0mds[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/contextlib.py[0m in [0;36m__enter__[0;34m(self)[0m
-[1;32m    115[0m         [0;32mdel[0m [0mself[0m[0;34m.[0m[0margs[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mkwds[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mfunc[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    116[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 117[0;31m             [0;32mreturn[0m [0mnext[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mgen[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    118[0m         [0;32mexcept[0m [0mStopIteration[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    119[0m             [0;32mraise[0m [0mRuntimeError[0m[0;34m([0m[0;34m"generator didn't yield"[0m[0;34m)[0m [0;32mfrom[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/file_manager.py[0m in [0;36macquire_context[0;34m(self, needs_lock)[0m
-[1;32m    185[0m     [0;32mdef[0m [0macquire_context[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mneeds_lock[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    186[0m         [0;34m"""Context manager for acquiring a file."""[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 187[0;31m         [0mfile[0m[0;34m,[0m [0mcached[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_acquire_with_cache_info[0m[0;34m([0m[0mneeds_lock[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    188[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    189[0m             [0;32myield[0m [0mfile[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/Library/Python/3.9/lib/python/site-packages/xarray/backends/file_manager.py[0m in [0;36m_acquire_with_cache_info[0;34m(self, needs_lock)[0m
-[1;32m    203[0m                     [0mkwargs[0m [0;34m=[0m [0mkwargs[0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    204[0m                     [0mkwargs[0m[0;34m[[0m[0;34m"mode"[0m[0;34m][0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_mode[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 205[0;31m                 [0mfile[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_opener[0m[0;34m([0m[0;34m*[0m[0mself[0m[0;34m.[0m[0m_args[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    206[0m                 [0;32mif[0m [0mself[0m[0;34m.[0m[0m_mode[0m [0;34m==[0m [0;34m"w"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    207[0m                     [0;31m# ensure file doesn't get overriden when opened again[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32mnetCDF4/_netCDF4.pyx[0m in [0;36mnetCDF4._netCDF4.Dataset.__init__[0;34m()[0m
-
-[0;32mnetCDF4/_netCDF4.pyx[0m in [0;36mnetCDF4._netCDF4._ensure_nc_success[0;34m()[0m
-
-[0;31mOSError[0m: [Errno -68] NetCDF: I/O failure: b'http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/ncep.reanalysis.derived/pressure/air.mon.1981-2010.ltm.nc'
-OSError: [Errno -68] NetCDF: I/O failure: b'http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/ncep.reanalysis.derived/pressure/air.mon.1981-2010.ltm.nc'
+Traceback (most recent call last):
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 1093, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/local/Cellar/python@3.9/3.9.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 559, in async_execute
+    await self.async_execute_cell(
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 838, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 650, in _async_poll_for_reply
+    await self._async_handle_timeout(timeout, cell)
+  File "/Users/tompkins/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 697, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+# Take global, annual average of the specific humidity
+weight_factor = atm_control.gw / atm_control.gw.mean(dim='lat')
+Qglobal = (atm_control.Q * weight_factor).mean(dim=('lat','lon','time'))
+# Take a look at what we just calculated ... it should be one-dimensional (vertical levels)
+print(Qglobal)
+-------------------
 

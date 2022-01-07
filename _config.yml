@@ -1,7 +1,7 @@
 # in _config.yml
 title: "Earth System Modelling"
 author: "Adrian Tompkins"
-logo: logo.png
+logo: logo/logo.png
 execute:
   execute_notebooks: force
 
